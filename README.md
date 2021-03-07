@@ -1,4 +1,4 @@
-# Toska: .docx To .tsv Converter
+# 🔧 Toska: .docx To .tsv Converter
 Small dotnet core console app for converting script documents into Toska-TSV format.
 
 `dotnet run path/file.docx`
