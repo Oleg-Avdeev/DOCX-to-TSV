@@ -11,4 +11,7 @@ Small dotnet core console app for converting script documents into Toska-TSV for
 
 ## Ouput TSV
 Output tsv file is formatted into a Toska spreadsheet format:
-|Chapter|Character|Text|Symbols Count|Action
+
+| Chapter | Character | Text            | Symbols Count | Action   |
+| ------- | --------- | --------------- | ------------- | -------- |
+| тест    | Кристина  | Они искали меня | 15            | [тест-2] |
