@@ -6,6 +6,7 @@ Small dotnet core console app for converting script documents into Toska-TSV for
 ## Input Document
   Document consists of Narrative, Speech and Choice lines.
   - Choice line format: `(choice1|choice2|choice3)`;
+  - Target line starts with `"--"` or `"—"` (m-dash, U+2014)
   - Speech line starts with `"- "`;
   - Otherwist line is parsed as a narrative line.
 
