@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using DocToTSV.Formatter.Data;
 
 namespace DocToTSV.Formatter
@@ -9,10 +10,10 @@ namespace DocToTSV.Formatter
 		private static string secondSpeaker = null;
 		private string line;
 
-		protected override Line ParseLine(string line)
+		protected override List<Line> ParseLine(string line)
 		{
 			this.line = line;
-			
+
 			SwitchSpeaker();
 			var speaker = GetSpeakerName(CurrentSpeaker);
 
@@ -21,7 +22,7 @@ namespace DocToTSV.Formatter
 			parsedLine.Character = Character.Get(speaker);
 			parsedLine.Text = line.TrimStart('-').TrimStart();
 
-			return parsedLine;
+			return new List<Line> { parsedLine };
 		}
 
 		private string GetSpeakerName(Speaker speaker)

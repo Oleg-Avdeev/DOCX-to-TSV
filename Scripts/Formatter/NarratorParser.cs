@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DocToTSV.Formatter.Data;
 
 namespace DocToTSV.Formatter
@@ -6,7 +7,7 @@ namespace DocToTSV.Formatter
 	{
 		private static readonly string narrator = "Нарратор";
 
-		protected override Line ParseLine(string line)
+		protected override List<Line> ParseLine(string line)
 		{
 			CurrentSpeaker = Speaker.None;
 
@@ -15,7 +16,7 @@ namespace DocToTSV.Formatter
 			parsedLine.Character = narrator;
 			parsedLine.Text = line;
 
-			return parsedLine;
+			return new List<Line> { parsedLine };
 		}
 	}
 }

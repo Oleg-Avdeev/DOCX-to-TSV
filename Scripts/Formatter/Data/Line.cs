@@ -7,6 +7,8 @@ namespace DocToTSV.Formatter.Data
 		public string Text;
 		public string Action;
 
+		public bool IsTarget;
+
 		public Line()
 		{
 		}
