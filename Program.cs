@@ -16,21 +16,21 @@ namespace DocToTSV
 			var formatted = LinesFormatter.Format(lines);
 			Info($"Successfuly formatted {formatted.Count} lines");
 
-			var tsvFilepath = args[0].Split(".")[0] + ".tsv";
-			File.WriteAllLines(tsvFilepath, formatted);
+			var tsvFilepath = AbstractParser.ChapterId + ".tsv";
+			File.WriteAllLines($"Export/{tsvFilepath}", formatted);
 
 			return 0;
         }
 
 		private static int Error(int code, string message)
 		{
-			Console.WriteLine($"Error: {message}");
+			Console.WriteLine($"Error: {message}".Red());
 			return code;
 		}
 
 		private static void Info(string message)
 		{
-			Console.WriteLine($"{message}");
+			Console.WriteLine($"{message}".Green());
 		}
     }
 }

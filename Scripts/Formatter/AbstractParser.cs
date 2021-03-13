@@ -12,18 +12,19 @@ namespace DocToTSV.Formatter
 
 	public abstract class AbstractParser : IParser
 	{
+		public static string ChapterId = null;
+		
 		protected enum Speaker { None, First, Second }
 		protected static Speaker CurrentSpeaker = Speaker.None;
-
-		protected static string ChapterId = null;
 
 		public List<string> Parse(string line)
 		{
 			Console.WriteLine(line);
 			if (ChapterId == null)
 			{
-				Console.WriteLine(); Console.WriteLine("Enter chapter ID");
-				ChapterId = Console.ReadLine();
+				Console.WriteLine(); Console.WriteLine("Enter chapter ID".Blue());
+				ChapterId = Console.ReadLine(); 
+				Console.WriteLine();
 			}
 
 			var parsedLine = ParseLine(line);
@@ -44,6 +45,7 @@ namespace DocToTSV.Formatter
 		protected List<Line> Split(Line line)
 		{
 			if (line.IsTarget) return new List<Line> { line };
+			if (line.Text.Length < 100) return new List<Line> { line };
 			
 			return line.Text.Split('.')
 				.Where(t => t.Length > 1)

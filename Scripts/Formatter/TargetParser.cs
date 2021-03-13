@@ -23,7 +23,8 @@ namespace DocToTSV.Formatter
 		{
 			if (!ChoiceParser.UnresolvedChoices.ContainsKey(target))
 			{
-				System.Console.WriteLine($"Couldn't resolve target [{target}]!");
+				System.Console.WriteLine($"Couldn't resolve target [{target}]!".Red());
+				System.Console.WriteLine();
 				return;
 			}
 			

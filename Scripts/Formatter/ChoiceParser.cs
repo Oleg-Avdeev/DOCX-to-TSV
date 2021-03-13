@@ -32,7 +32,10 @@ namespace DocToTSV.Formatter
 		private string AddChoice(string choice)
 		{
 			var newId = $"{ChapterId}-{UnresolvedChoices.Count}";
-			UnresolvedChoices.Add(choice, newId);
+			
+			if (!UnresolvedChoices.ContainsKey(choice))
+				UnresolvedChoices.Add(choice, newId);
+
 			return newId;
 		}
 	}

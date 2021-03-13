@@ -49,8 +49,10 @@ namespace DocToTSV.Formatter
 		private string ReadSpeakerName(Speaker speaker)
 		{
 			Console.WriteLine();
-			Console.WriteLine($"Who says \"{line}\"?");
-			return Console.ReadLine();
+			Console.WriteLine($"Who says \"{line}\"?".Blue());
+			var name = Console.ReadLine();
+			Console.WriteLine();
+			return name;
 		}
 	}
 }

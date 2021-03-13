@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.12.3" />
+    <PackageReference Include="Pastel" Version="2.1.0" />
   </ItemGroup>
 
 </Project>
